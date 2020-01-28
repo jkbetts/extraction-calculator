@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <!---fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+        <!---script src-->
+    <script type="text/javascript" src="scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+    <body>
+        <div class="wrapperwrapper">
+        <div class="inputWrapper">
+            <p>TDS% Reading</p>
+                <input id ="tdspercent">
+            <p>Coffee Dose (g)</p>
+                <input id="doseweight">
+            <p>Water Weight (g)</p>
+                <input id="waterweight">
+            <p>Brew Yield (g)</p>
+                <input id="brewyield" readonly>
+            <button type="button" onclick="refract();">Calculate</button>
+        </div>
+        </div>
+        <div class="results">
+            <p id="result">Your results will display here.</p>
+            <p id="overUnder"></p>
+            <p id="ratio"></p>
+            <p id="strength"></p>
+         </div>
+    </body>
