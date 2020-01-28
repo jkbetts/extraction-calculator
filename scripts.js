@@ -1,45 +1,69 @@
-var tds, dose, water, brewYield, extraction, rat, watersub, yieldCalc, waterCalc;
+var tds, dose, water, brewYield, extraction, rat;
 var underOver, strength = "";
 let lrr = 2.2;
+let exception = 0;
 
 function readData(){
     tds = document.getElementById("tdspercent").value;
     dose = document.getElementById("doseweight").value;
     water = document.getElementById("waterweight").value;
     brewYield = document.getElementById("brewyield").value;
+
+    if (isNaN(tds)){
+        alert("Please enter only numbers");
+        exception++;
+    }
+    if (isNaN(dose)){
+        alert("Please enter only numbers");
+        exception++;
+    }
+    if (isNaN(water)){
+        alert("Please enter only numbers");
+        exception++;
+    }
+    if (isNaN(brewYield)){
+        alert("Please enter only numbers");
+        exception++;
+    }
 }
 
 
 function calcYield(){
     brewYield = water - (dose*lrr);
     document.getElementById("brewyield").value = brewYield;
+    if(brewYield == 0){
+        exception++;
+    }
 }
-
 
 function refract() {
 
     readData();
     calcYield();
 
+    if(exception<1){
 
-    extraction = (brewYield * tds)/dose;
-    let extNumClean = extraction.toFixed(2);
 
-    switch (true){
-        case extraction > 22:
-            underOver= "over-extracted";
-            break;
-        case extraction < 20:
-            underOver= "under-extracted";
-            break;
-        default:
-            underOver= "well extracted";
-            break;
+        extraction = (brewYield * tds)/dose;
+        let extNumClean = extraction.toFixed(2);
+
+        switch (true){
+            case extraction > 22:
+                underOver= "over-extracted";
+                break;
+            case extraction < 20:
+                underOver= "under-extracted";
+                break;
+            default:
+                underOver= "well extracted";
+                break;
+        }
+        document.getElementById("result").innerHTML = "Your extraction is: " + extNumClean + "%.";
+        document.getElementById("overUnder").innerHTML ="This cup is " + underOver +".";
+        
+        strengthTest();
     }
-    document.getElementById("result").innerHTML = "Your extraction is: " + extNumClean + "%.";
-    document.getElementById("overUnder").innerHTML ="This cup is " + underOver +".";
-    
-    strengthTest();
+    exception = 0;
 }
 function strengthTest(){
 
