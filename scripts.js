@@ -3,6 +3,7 @@ var underOver, strength = "";
 let lrr = 2.2;
 let exception = 0;
 let brewYield = 0;
+let congrats = 0;
 
 function readData(){
     tds = document.getElementById("tdspercent").value;
@@ -38,18 +39,17 @@ function refract() {
     calcYield();
 
     if(exception<1){
-
-
         extraction = (brewYield * tds)/dose;
-
         document.getElementById("displayExtraction").value = extraction.toFixed(2);
     }
     exception = 0;
+    strengthTest();
+    extractionTest();
 }
 function strengthTest(){
 
-    rat = water/dose;
-    let ratio = rat.toFixed(1);
+    ratio = water/dose;
+
     switch(true){
         case ratio <=14:
             strength = "This brew ratio is too strong.";
@@ -67,9 +67,29 @@ function strengthTest(){
             strength = ""
             break;
     }
-    //document.getElementById("ratio").innerHTML = "Brew Ratio: ";
-    //document.getElementById("ratResult").innerHTML = ratio +" : 1";
-    if (strength != ""){
-        //document.getElementById("strength").innerHTML = strength;
+    document.getElementById("resultStmt").innerHTML = "";
+    document.getElementById("ratioStmt").innerHTML = ratio.toFixed(1) + " : 1";
+    document.getElementById("strength").innerHTML = strength;
+}
+function extractionTest(){
+    switch (true){
+        case extraction < 20:
+            underOver="under-extracted."
+            break;
+        case extraction > 23:
+            underOver="over-extracted."
+            break;
+        default:
+            underOver="well-extracted."
+            congrats++;
+            break;
     }
+    document.getElementById("extractionStmt").innerHTML = "Your cup is " + underOver;
+    if(congrats==1){
+        document.getElementById("congrats").innerHTML = "Great job!";
+    }
+    else{
+        document.getElementById("congrats").innerHTML = "";
+    }
+    congrats=0;
 }

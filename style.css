@@ -5,6 +5,10 @@ html, body{
     font-size: 10px;
     line-height: 15px;
 }
+h1{
+    font-size: 25px;
+    padding-top: 25px;
+}
 .calculatorWindow{
     position: relative;
     display: block;
@@ -15,7 +19,7 @@ html, body{
     margin-right: auto;
     background-color: rgb(231, 229, 76);
     text-align: center;
-    border: 2px solid rgb(156, 156, 156);
+    border: 2px solid indigo;
     /* border-radius: 7px; */
     padding: 5px;
     /* box-shadow: inset -1px -1px 5px #797979; */
@@ -66,7 +70,7 @@ button {
     /* border-radius: 7px; */
   }
 
-.tdsInput, .doseInput, .waterInput, .yieldBox, .extBox{
+.tdsInput, .doseInput, .waterInput, .yieldBox, .extBox, .resultsBox{
     background-color: #5cdaeb;
     position: absolute;
     width: 170px;
@@ -97,6 +101,14 @@ button {
     background-color: #bb4949;
     top: 110px;
     right: 10px;
+}
+.resultsBox{
+    background-color: #e4eec0;
+    padding:15px;
+    top: 210px;
+    right: 10px;
+    height: 190px;
+    font-size: 8px;
 }
 
 .finePrint{

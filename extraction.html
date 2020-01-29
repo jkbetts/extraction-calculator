@@ -10,7 +10,7 @@
 </head>
     <body>
         <div class="calculatorWindow">
-          
+            <h1>REFRACTOMATIC</h1>
             <div class="tdsInput">
                 <p>TDS% Reading</p>
                     <input id ="tdspercent">
@@ -39,6 +39,15 @@
             <div class ="finePrint">
                 Brew yield auto calculates based on water weight and liquid retained ratio. 
                     If the yield is inaccurate, adjust LRR until it matches.
+            </div>
+
+            <div class="resultsBox">
+                <p id="resultStmt">Your results will display here.</p>
+                <p style="font-size:12px;" id="ratioStmt"></p>
+                <p id="strength"></p>
+                <br>
+                <p id="extractionStmt"></p>
+                <p id="congrats"></p>
             </div>
 
             <button type="button" onclick="refract();">Calculate</button>
