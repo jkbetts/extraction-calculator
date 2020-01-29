@@ -58,7 +58,10 @@ function refract() {
                 underOver= "well extracted";
                 break;
         }
-        document.getElementById("result").innerHTML = "Your extraction is: " + extNumClean + "%.";
+        //document.getElementById("resultHeader").innerHTML = "Results:";
+        document.getElementById("tableheader").innerHTML = "Result";
+        document.getElementById("ext").innerHTML = "Extraction %";
+        document.getElementById("result").innerHTML = extNumClean +" %";
         document.getElementById("overUnder").innerHTML ="This cup is " + underOver +".";
         
         strengthTest();
@@ -86,7 +89,8 @@ function strengthTest(){
             strength = ""
             break;
     }
-    document.getElementById("ratio").innerHTML = "Brew Ratio: " + ratio +":1";
+    document.getElementById("ratio").innerHTML = "Brew Ratio: ";
+    document.getElementById("ratResult").innerHTML = ratio +" : 1";
     if (strength != ""){
         document.getElementById("strength").innerHTML = strength;
     }
