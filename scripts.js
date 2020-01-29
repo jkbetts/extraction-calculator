@@ -1,13 +1,13 @@
-var tds, dose, water, brewYield, extraction, rat;
+var tds, dose, water, extraction, rat;
 var underOver, strength = "";
 let lrr = 2.2;
 let exception = 0;
+let brewYield = 0;
 
 function readData(){
     tds = document.getElementById("tdspercent").value;
     dose = document.getElementById("doseweight").value;
     water = document.getElementById("waterweight").value;
-    brewYield = document.getElementById("brewyield").value;
 
     if (isNaN(tds)){
         alert("Please enter only numbers");
@@ -21,16 +21,12 @@ function readData(){
         alert("Please enter only numbers");
         exception++;
     }
-    if (isNaN(brewYield)){
-        alert("Please enter only numbers");
-        exception++;
-    }
 }
 
 
 function calcYield(){
     brewYield = water - (dose*lrr);
-    document.getElementById("brewyield").value = brewYield;
+    document.getElementById("brewYield").value = brewYield;
     if(brewYield == 0){
         exception++;
     }
@@ -45,26 +41,8 @@ function refract() {
 
 
         extraction = (brewYield * tds)/dose;
-        let extNumClean = extraction.toFixed(2);
 
-        switch (true){
-            case extraction > 22:
-                underOver= "over-extracted";
-                break;
-            case extraction < 20:
-                underOver= "under-extracted";
-                break;
-            default:
-                underOver= "well extracted";
-                break;
-        }
-        //document.getElementById("resultHeader").innerHTML = "Results:";
-        document.getElementById("tableheader").innerHTML = "Result";
-        document.getElementById("ext").innerHTML = "Extraction %";
-        document.getElementById("result").innerHTML = extNumClean +" %";
-        document.getElementById("overUnder").innerHTML ="This cup is " + underOver +".";
-        
-        strengthTest();
+        document.getElementById("displayExtraction").value = extraction.toFixed(2);
     }
     exception = 0;
 }
@@ -89,9 +67,9 @@ function strengthTest(){
             strength = ""
             break;
     }
-    document.getElementById("ratio").innerHTML = "Brew Ratio: ";
-    document.getElementById("ratResult").innerHTML = ratio +" : 1";
+    //document.getElementById("ratio").innerHTML = "Brew Ratio: ";
+    //document.getElementById("ratResult").innerHTML = ratio +" : 1";
     if (strength != ""){
-        document.getElementById("strength").innerHTML = strength;
+        //document.getElementById("strength").innerHTML = strength;
     }
 }
