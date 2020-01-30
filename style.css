@@ -1,6 +1,6 @@
 html, body{
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,91,1) 49%, rgba(0,212,255,1) 100%);
+    background: rgba(0,212,255,1);
     display: 100vh;
     font-family: 'Cairo', sans-serif;
     font-size: 12px;
