@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <!---fonts-->
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
@@ -10,7 +11,7 @@
 </head>
     <body>
         <div class="calculatorWindow">
-            <h1>REFRACTOMATIC</h1>
+            <h1>REFRACT-<span class="o">O</span>-MATIC</h1>
             <div class="tdsInput">
                 <p>TDS% Reading</p>
                     <input id ="tdspercent">
@@ -45,11 +46,17 @@
                 <p id="resultStmt">Your results will display here.</p>
                 <p style="font-size:12px;" id="ratioStmt"></p>
                 <p id="strength"></p>
-                <br>
-                <p id="extractionStmt"></p>
+                <p style="margin-top:5px;" id="extractionStmt"></p>
                 <p id="congrats"></p>
             </div>
+            <div class="lrrAdjust">
+                <button class="plus" type="button" onclick="increaseLRR();">+</button>
+                LRR
+                <button class="minus" type="button" onclick="decreaseLRR();">-</button>
+            </div>
 
-            <button type="button" onclick="refract();">Calculate</button>
+
+            <button class="calc" type="button" onclick="refract();">Calculate</button>
         </div>
     </body>
+</html>

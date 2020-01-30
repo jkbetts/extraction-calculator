@@ -6,15 +6,22 @@ html, body{
     line-height: 15px;
 }
 h1{
-    font-size: 25px;
-    padding-top: 25px;
+    position: absolute;
+    background-color: #faf;
+    font-size: 20px;
+    margin-left: 10px;
+    padding-top: 15px;
+    height: 45px;
+    width: 340px;
+    vertical-align: middle;
+    box-sizing: border-box;
 }
 .calculatorWindow{
     position: relative;
     display: block;
     width: 360px;
-    height: 515px;
-    margin-top: 10px;
+    height: 470px;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(231, 229, 76);
@@ -52,6 +59,8 @@ input{
     /* box-shadow: 1px 1px 8px #cbced4; */
     border: 1px solid transparent;
 }
+
+
 button {
     font-family: 'Press Start 2P', cursive;
     position: absolute;
@@ -61,7 +70,7 @@ button {
     color: rgb(255, 255, 255);
     font-size: 14px;
     line-height: 27px;
-    height: 90px;
+    height: 42.5px;
     width: 170px;
     min-width: 54px;
     text-align: center;
@@ -69,8 +78,29 @@ button {
     box-sizing: border-box;
     /* border-radius: 7px; */
   }
+.plus, .minus{
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #22d440;
+    color: rgb(255, 255, 255);
+    line-height: 8px;
+    height: 25px;
+    width: 1px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid indigo;
+    box-sizing: border-box;
+}
+.minus{
+    top: 7px;
+    left: 10px;
+}
+.plus{
+    top: 7px;
+    right: 10px;
+}
 
-.tdsInput, .doseInput, .waterInput, .yieldBox, .extBox, .resultsBox{
+.tdsInput, .doseInput, .waterInput, .yieldBox, .extBox, .resultsBox, .lrrAdjust{
     background-color: #5cdaeb;
     position: absolute;
     width: 170px;
@@ -79,15 +109,15 @@ button {
     box-sizing: border-box;
 }
 .tdsInput{
-    top: 110px;
+    top: 80px;
     left: 10px;
 }
 .doseInput{
-    top: 210px;
+    top: 180px;
     left: 10px;
 }
 .waterInput{
-    top: 310px;
+    top: 280px;
     left: 10px;
 }
 .yieldBox{
@@ -99,13 +129,25 @@ button {
 .extBox{
     color: white;
     background-color: #bb4949;
-    top: 110px;
+    top: 80px;
     right: 10px;
 }
+.lrrAdjust{
+    display: inline-block;
+    height: 42.5px;
+    width: 170px;
+    display: block;
+    color: white;
+    background-color: #bb4949;
+    bottom: 57.5px;
+    right: 10px;
+    line-height:42.5px;
+}
+
 .resultsBox{
     background-color: #e4eec0;
     padding:15px;
-    top: 210px;
+    top: 180px;
     right: 10px;
     height: 190px;
     font-size: 8px;
@@ -132,4 +174,9 @@ button {
 }
 .yieldBox:hover ~ .finePrint{
     display: block;
+}
+.o{
+    font-size: 35px;
+    color: red;
+    vertical-align: middle;
 }
