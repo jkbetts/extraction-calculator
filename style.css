@@ -10,17 +10,12 @@ html{
 }
 body{
     margin:0;
+    padding: 0;
 }
 
-.calculatormargin{
-    position: relative;
-    margin-top: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
-}
 .calculatorWindow{
     position: relative;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
     display: block;
