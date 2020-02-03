@@ -165,6 +165,7 @@ button {
     box-sizing: border-box;
     background-color: rgb(170, 255, 177);
     border-radius: 5px;
+    box-shadow: 1px 1px 15px #0000008f;
 }
 .finePrint{
     bottom: -88px;
