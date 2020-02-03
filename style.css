@@ -154,7 +154,7 @@ button {
     font-size:14px;
     position: absolute;
     width: 360px;
-    height: 70px;
+    height: 75px;
     line-height: 18px;
     padding: 10px;
     text-align: left;
@@ -164,7 +164,7 @@ button {
     box-shadow: 1px 1px 15px #0000008f;
 }
 .finePrint{
-    bottom: -88px;
+    bottom: -93px;
     left: -5px;
 }
 .lrrExplain{
