@@ -5,6 +5,7 @@
     <!---fonts-->
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600&display=swap" rel="stylesheet">
 
         <!---script src-->
     <script type="text/javascript" src="scripts.js"></script>
@@ -12,6 +13,9 @@
 </head>
     <body>
         <div class="calculatormargin">
+            <div class="title">
+                
+            </div>
             <div class="calculatorWindow">
                 <div class="tdsInput">
                     <p>TDS% Reading</p>
@@ -31,16 +35,16 @@
                 <div class="yieldBox">
                     <p>Brew Yield (g)</p>
                     <input id="brewYield" readonly>
+
+                    <div class ="finePrint">
+                        Brew yield auto calculates based on water weight and liquid retained ratio. 
+                            If the yield is inaccurate, adjust LRR until it matches.
+                    </div>
                 </div>
 
                 <div class="extBox">
                     <p>Extraction %</p>
                     <input id="displayExtraction" readonly>
-                </div>
-
-                <div class ="finePrint">
-                    Brew yield auto calculates based on water weight and liquid retained ratio. 
-                        If the yield is inaccurate, adjust LRR until it matches.
                 </div>
 
                 <div class="resultsBox">
@@ -54,6 +58,11 @@
                     <button class="plus" type="button" onclick="increaseLRR();">+</button>
                     LRR
                     <button class="minus" type="button" onclick="decreaseLRR();">-</button>
+
+                    <div class="lrrExplain">
+                        Liquid retained ratio. This is a measure of how many grams of water are retained
+                            in the bed of grounds after brewing. Standard ratio: 2.2g water : 1 g coffee.
+                    </div>
                 </div>
 
 
