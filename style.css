@@ -1,15 +1,20 @@
-html, body{
+html{
     background: rgb(2,0,36);
-    background: rgba(0,212,255,1);
+    background: linear-gradient(133deg, rgba(2,0,36,1) 0%, rgba(9,121,91,1) 49%, rgba(0,212,255,1) 100%);
     display: 100vh;
     font-family: 'Cairo', sans-serif;
     font-size: 12px;
     line-height: 15px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body{
+    margin:0;
 }
 
 .calculatormargin{
     position: relative;
-    margin-top: 5%;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
     width: 400px;
