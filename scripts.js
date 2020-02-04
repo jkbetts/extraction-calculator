@@ -20,8 +20,7 @@ function readData(){
 function calcYield(){
     brewYield = water - (dose*lrr);
     //test for NaN and output yield.
-    if(isNaN(brewYield)){
-        document.getElementById("brewYield").value = 0;
+    if(brewYield == 0){
         exception++;
     }
     else{
@@ -93,8 +92,11 @@ function extractionTest(){
     }
     else{
         switch (true){
-            case extraction < 20:
+            case extraction < 19:
                 underOver="under-extracted."
+                break;
+            case extraction < 19.5:
+                underOver="a little under-extracted."
                 break;
             case extraction > 23:
                 underOver="over-extracted."
@@ -117,12 +119,16 @@ function extractionTest(){
 }
 function increaseLRR(){
     lrr = lrr + 0.1;
-    refract();
+    document.getElementById("lrrText").innerHTML = lrr.toFixed(1);
+    if (isNaN(extraction)){}
+    else{refract();}
 }
 
 function decreaseLRR(){
     lrr = lrr - 0.1;
-    refract();
+    document.getElementById("lrrText").innerHTML = lrr.toFixed(1);
+    if (isNaN(extraction)){}
+    else{refract();}
 }
 //main calculator function
 function refract() {
@@ -131,8 +137,11 @@ function refract() {
     //calls all functions
     readData();
     calcYield();
-    calcExt();
-    strengthTest();
-    extractionTest();
+    if(brewYield == 0){}
+    else{
+        calcExt();
+        strengthTest();
+        extractionTest();
+    }
     exception = 0;  //resets exceptions after running
 }

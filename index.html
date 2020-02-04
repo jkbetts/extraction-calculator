@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=420px, user-scalable=no">
+    <meta name="viewport" content="width=420, user-scalable=no">
     <!---fonts-->
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <body>
             <div class="calculatorWindow">
                 <div class="tdsInput">
-                    <p>TDS% Reading</p>
+                    <p>TDS Reading</p>
                         <input id ="tdspercent">
                 </div>
 
@@ -44,7 +44,12 @@
                 </div>
 
                 <div class="resultsBox">
-                    <p id="resultStmt">Your results will display here.</p>
+                    <p id="resultStmt">
+                        1. Input the TDS reading from your refractometer.<br><br>
+                        2. Input your coffee dose and water weight.<br><br>
+                        3. Click 'Calculate' <br><br>
+                        4. Verify that your brew yield is accurate.
+                    </p>
                     <p style="font-size:12px;" id="ratioStmt"></p>
                     <p id="strength"></p>
                     <p style="margin-top:5px;" id="extractionStmt"></p>
@@ -52,7 +57,7 @@
                 </div>
                 <div class="lrrAdjust">
                     <button class="plus" type="button" onclick="increaseLRR();">+</button>
-                    LRR
+                    <div id="lrrText">LRR</div>
                     <button class="minus" type="button" onclick="decreaseLRR();">-</button>
 
                     <div class="lrrExplain">

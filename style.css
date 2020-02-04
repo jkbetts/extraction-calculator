@@ -1,12 +1,12 @@
 html{
-    background: rgb(138,135,199);
-    background: linear-gradient(33deg, rgba(138,135,199,1) 0%, rgba(130,201,182,1) 64%, rgba(165,240,255,1) 100%);
+    background: rgb(171,169,199);
+background: linear-gradient(33deg, rgba(171,169,199,1) 0%, rgba(198,226,218,1) 63%, rgba(204,242,250,1) 100%);
     display: 100vh;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 12px;
     line-height: 15px;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed;   
     overflow-x: hidden;
 }
 body{
@@ -30,7 +30,6 @@ body{
     box-shadow: 1px 1px 15px #0000008f;
 }
 .results{
-    margin-top: 5px;
     font-size: 15px;
     height: auto;
 }
@@ -71,6 +70,9 @@ button {
     border-radius: 10px;
     box-shadow: 0px 1px 3px #0000008f;
   }
+button:focus{
+    outline:none;
+}
 .plus, .minus{
     position: absolute;
     font-family: 'Press Start 2P', cursive;
@@ -119,33 +121,28 @@ button {
     left: 10px;
 }
 .yieldBox{
-
-    background-color: #e5f0f1a6;
     bottom: 10px;
     left: 10px;
 }
-.extBox{
 
-    background-color: #e5f0f1a6;
+.extBox{
     top: 10px;
     right: 10px;
 }
 .lrrAdjust{
     height: 42.5px;
     width: 170px;
-    background-color: #e5f0f1a6;
     bottom: 57.5px;
     right: 10px;
     line-height:42.5px;
 }
 
 .resultsBox{
-    background-color: #e5f0f1a6;
     padding:15px;
     top: 110px;
     right: 10px;
     height: 190px;
-    font-size: 13px;
+    font-size: 10px;
 }
 
 .finePrint, .lrrExplain{
@@ -179,10 +176,10 @@ button {
 .yieldBox:hover .finePrint{
     display: block;
     animation-name: showboxes;
-    animation-duration: .5s;
+    animation-duration: .75s;
 }
 .lrrAdjust:hover .lrrExplain{
     display: block;
     animation-name: showboxes;
-    animation-duration: .5s;
+    animation-duration: .75s;
 }
