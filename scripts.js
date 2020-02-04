@@ -20,7 +20,7 @@ function readData(){
 function calcYield(){
     brewYield = water - (dose*lrr);
     //test for NaN and output yield.
-    if(brewYield == 0){
+    if(brewYield == 0 || isNaN(brewYield)){
         exception++;
     }
     else{
